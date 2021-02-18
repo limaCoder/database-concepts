@@ -1,0 +1,47 @@
+Chave Primária é única, identifica a tabela, não é vazia e não pode mudar, e às vezes pode ocupar mais de 
+uma coluna, com seus pares não podendo se repetir, mas não é usual ter esse último tipo de chave Primária. 
+E é fácil de consultar uma tabela pela chave Primária.
+
+Linha === tupla
+Varchar vai de 4000 a 8000 dependendo do SGBD, para textos maiores, usa-se BLOB e CLOB.
+Entre cliente e produto, existe uma tabela intermediária que é pedido
+
+Chave estrangeira - Quando a relação é um para um, a chave estrangeira tem ser única como constraint. Quando
+a relação é muitos para muitos, precisa de uma tabela intermediária com duas colunas de chaves estrangeiras.
+Quando a relação é um para muitos, a chave estrangeira fica no muitos, e quando a relação é um para um, 
+vai depender da situação.
+
+Linguagem SQL
+DML (Data Manipulation Language) - parte da linguagem que manipulamos os dados com Insert, Select, Update e 
+Delete (CRUD).
+DDL (Data Definition Language) - parte da linguagem que criamos tabelas, alteramos tabelas, dropamos 
+tabelas, acrescentar colunas, criar Schema e tudo relacionado ao Schema.
+DCL (Data Control Language) - Grant (dar acesso ao usuário a determinado tipo de ação, como dar update), 
+Deny (Negando acesso do usuário a determinado tipo de ação, como dar delete), Revolve. Tudo isso é o 
+controle de acesso e permissão ao Banco de Dados.
+TCL (Transation Control Language) - parte que definimos nossas transações, seja iniciando nossas 
+transações(begin trans), commitar as transações caso tudo dê certo (commit trans), ou dar um rollback 
+caso haja um problema durante a persistência de dados e tudo aquilo que foi tentado fazer é desfeito para 
+o banco voltar ao seu estado inicial.
+
+
+WHERE: indica as condições
+
+GROUP BY: realiza agrupamentos
+
+ORDER BY: ordena os dados
+
+
+
+Ainda podemos combinar buscas com operadores lógicos.
+
+AND: avalia se duas condições são verdadeiras
+
+OR: avalia se uma condição é verdadeira
+
+NOT: negação
+
+
+Use DROP para excluir tabelas e bases de dados;
+
+Use DELETE para deletar dados em tabelas.

@@ -1,0 +1,15 @@
+db.estados.find()
+db.estados.find().pretty()
+db.estados.findOne() -- exibir primeiro registro criado
+db.estados.findOne({sigla: "RJ"}) -- filtar apenas os registros com sigla RJ. Como se fosse um filtro where
+db.estados.find({$or: [{sigla: "RJ"}, {sigla: "AC"}]}).pretty() -- exibir ambos que atendam a esses requisitos. Se fosse
+com 'and' daria falso, pois ambos teriam que ter a mesma sigla.
+db.estados.find({populacao: {$exists: true}}).pretty() -- exibir registros com atributo populacao criado
+db.estados.find().skip(1).limit(2) -- skip(1) irá pular o primeiro registro, ou mais de acordo com o número especificado
+e limit(2) irá limitar a exibição da consulta para apenas os dois primeiros registros acahados, levando em conta o skip,
+pode ser mais ou menos limitados de acordo com o número especificado
+db.estados.count() exibir a quantidade de registros
+db.estados.find({sigla: "SP"}, {nome: 1, sigla: 1, _id: 0}) -- filtrando registros para exibir os nomes e siglas, mas não
+os id's, de registros com a sigla SP
+db.estados.find({sigla: "SP"}, {"cidades.nome": 1, _id: 0}) - filtrando registros para exibir os nomes do array Cidades, 
+mas não os id's, de registros com a sigla SP

@@ -1,0 +1,10 @@
+-- métodos ou operadores matématicos(ex: sum) utilizam $
+db.estados.aggregate([
+    { $project: {nome: 1, "cidades.nome": 1, _id: 0} } 
+])
+
+db.estados.aggregate([
+    { $project: {populacao: {$sum: "$cidades.populacao"}, sigla: 1, _id: 0} },
+    { $group: {_id: null, populacaoTotal: {$sum: "$populacao" }} }, -- agrupando, como um group by / populacao está marcado com $ porque é um valor que precisa ser interpolado/resolvido
+    { $project: { _id: 0, populacaoTotal: 1 } },
+])

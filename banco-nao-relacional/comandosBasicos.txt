@@ -1,0 +1,15 @@
+help -- consultar os comandos do MongoDB
+cls -- limpar a tela
+show dbs -- mostrar as databases criadas
+use wm -- usar uma database, mesmo que ela não tenha sido criada
+show dbs
+db.createCollection('estados') -- criando uma collection, que é equivalente à uma tabela no MySQL
+show dbs
+show collections -- mostrar as collections
+db.createCollection('Estados') -- MongoDB é case sensitive, ou seja, precisa ter cuidado com uso de maiúsculos e minúsculos
+show collections
+db.Estados.drop() -- dropando uma collection
+show collections
+db.estados.drop()
+show collections
+show dbs

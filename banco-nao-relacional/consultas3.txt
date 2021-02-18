@@ -1,0 +1,8 @@
+db.estados.aggregate([
+    { $match: {"cidades.nome": "Sorocaba"} }, -- match é como um where
+    { $unwind: "$cidades"}, -- desenrolando a collection. Ao invés de ser vários doc para uma única collection cidades,
+    serão docs separados para a mesma cidade, ou seja, cidades irá aparecer várias vezes, mas cada vez que aparecer é
+    para exibir um único doc diferente
+    { $match: {"cidades.nome": "Sorocaba"} },
+    { $project: {_id: "$cidades._id"} } -- com o project eu filtro os docs que eu quero que sejam exibidos
+]).pretty()
